@@ -1,0 +1,16 @@
+name: covid_dashboard
+channels:
+  - defaults
+dependencies:
+  - python==3.8.5
+  - requests
+  - pandas
+  - matplotlib
+  - numpy
+  - pip
+  - jupyter
+  - ipython
+  - scikit-learn
+  - seaborn
+  - plotly
+  - flask
