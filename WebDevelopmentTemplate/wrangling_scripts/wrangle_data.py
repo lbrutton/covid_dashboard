@@ -1,5 +1,21 @@
 import pandas as pd
 import plotly.graph_objs as go
+from datetime import date, timedelta
+import requests
+
+today = date.today()
+two_weeks_ago = today - timedelta(14)
+url = "https://api.covid19tracking.narrativa.com/api/country/spain/region/canarias/sub_region/fuerteventura?date_from="+two_weeks_ago.strftime("%Y-%m-%d")+"&date_to="+today.strftime("%Y-%m-%d")
+payload = {}
+headers= {}
+response = requests.request("GET", url, headers=headers, data = payload)
+
+new_cases_t2wk = []
+for date in response.json()['dates']:
+    new_cases = response.json()['dates'][date]['countries']['Spain']['regions'][0]['sub_regions'][0]['today_new_confirmed']
+    new_cases_t2wk.append({'date': date, 'new_cases': new_cases})
+
+df_new_cases = pd.DataFrame(new_cases_t2wk)
 
 # Use this file to read in your data and prepare the plotly visualizations. The path to the data files are in
 # `data/file_name.csv`
@@ -37,14 +53,14 @@ def return_figures():
 
     graph_two.append(
       go.Bar(
-      x = ['a', 'b', 'c', 'd', 'e'],
-      y = [12, 9, 7, 5, 1],
+      x = df_new_cases['date'].values,
+      y = df_new_cases['new_cases'].values
       )
     )
 
-    layout_two = dict(title = 'Chart Two',
-                xaxis = dict(title = 'x-axis label',),
-                yaxis = dict(title = 'y-axis label'),
+    layout_two = dict(title = 'New daily covid cases in Fuerteventura',
+                xaxis = dict(title = 'date',),
+                yaxis = dict(title = 'count of new cases'),
                 )
 
 
