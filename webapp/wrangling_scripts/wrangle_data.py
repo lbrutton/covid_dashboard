@@ -69,7 +69,7 @@ def return_figures():
       x = df_new_cases['date'][df_new_cases['country'] == 'Fuerteventura'].values,
       y = df_new_cases['new_cases'][df_new_cases['country'] == 'Fuerteventura'].values,
       name = 'Fuerteventura',
-      mode = 'lines'
+      mode = 'lines + markers'
       )
     )
 
@@ -78,13 +78,13 @@ def return_figures():
       x = df_new_cases['date'][df_new_cases['country'] == 'Canary Islands'].values,
       y = df_new_cases['new_cases'][df_new_cases['country'] == 'Canary Islands'].values,
       name = 'Canary Islands',
-      mode = 'lines'
+      mode = 'lines + markers'
       )
     )
 
-    layout_one = dict(title = 'New daily covid cases',
+    layout_one = dict(title = 'New daily COVID cases',
                 xaxis = dict(title = 'date'),
-                yaxis = dict(title = 'count of new cases'),
+                yaxis = dict(title = 'new cases'),
                 )
 
 # second chart plots ararble land for 2015 as a bar chart    
@@ -106,9 +106,9 @@ def return_figures():
       )
     )
 
-    layout_two = dict(title = 'Cumulative count of COVID cases',
+    layout_two = dict(title = 'Total COVID cases',
                 xaxis = dict(title = 'date',),
-                yaxis = dict(title = 'count of new cases'),
+                yaxis = dict(title = 'total cases')
                 )
 
 
@@ -119,7 +119,7 @@ def return_figures():
       x = df_new_deaths['date'][df_cumulative_cases['country'] == 'Fuerteventura'].values,
       y = df_new_deaths['new_deaths'][df_cumulative_cases['country'] == 'Fuerteventura'].values,
       name = 'Fuerteventura',
-      mode = 'lines'
+      mode = 'lines + markers'
       )
     )
 
@@ -128,7 +128,7 @@ def return_figures():
       x = df_new_deaths['date'][df_cumulative_cases['country'] == 'Canary Islands'].values,
       y = df_new_deaths['new_deaths'][df_cumulative_cases['country'] == 'Canary Islands'].values,
       name = 'Canary Islands',
-      mode = 'lines'
+      mode = 'lines + markers'
       )
     )
 
