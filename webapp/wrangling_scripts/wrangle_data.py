@@ -102,7 +102,9 @@ def return_figures():
       go.Bar(
       x = df_cumulative_cases['date'][df_cumulative_cases['country'] == 'Canary Islands'].values,
       y = df_cumulative_cases['confirmed_cases'][df_cumulative_cases['country'] == 'Canary Islands'].values,
-      name = 'Canary Islands'
+      name = 'Canary Islands',
+      opacity=0.6,
+      marker_line_width=1.5
       )
     )
 
@@ -152,7 +154,9 @@ def return_figures():
       go.Bar(
       x = df_cumulative_deaths['date'][df_cumulative_cases['country'] == 'Canary Islands'].values,
       y = df_cumulative_deaths['total_deaths'][df_cumulative_cases['country'] == 'Canary Islands'].values,
-      name = 'Canary Islands'
+      name = 'Canary Islands',
+      opacity=0.6,
+      marker_line_width=1.5
       )
     )
 
