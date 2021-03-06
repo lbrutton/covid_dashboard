@@ -166,10 +166,13 @@ def return_figures():
                 )
     
     # append all charts to the figures list
+
+    config = {'responsive': True}
+
     figures = []
-    figures.append(dict(data=graph_one, layout=layout_one))
-    figures.append(dict(data=graph_two, layout=layout_two))
-    figures.append(dict(data=graph_three, layout=layout_three))
-    figures.append(dict(data=graph_four, layout=layout_four))
+    figures.append(dict(data=graph_one, layout=layout_one, config=config))
+    figures.append(dict(data=graph_two, layout=layout_two, config=config))
+    figures.append(dict(data=graph_three, layout=layout_three, config=config))
+    figures.append(dict(data=graph_four, layout=layout_four, config=config))
 
     return figures
