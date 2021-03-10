@@ -12,7 +12,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 </head>
 
@@ -76,18 +76,27 @@
                 </div>
             </div>
 
-            <!--bottom two charts-->        
+            <!--middle two charts-->        
             <div class="row mb-6">
                 <div class="col-sm"> 
                     <div id="chart3">
                         <div id="{{ids[2]}}"></div>
                     </div>
                 </div>
-                <div class="col-sm">
-                    <div id="chart4">
+            </div>
+
+            <!--bottom two charts-->            
+            <div class="row mb-6">
+                <div class="col-sm"> 
+                    <div id="chart5">
                         <div id="{{ids[3]}}"></div>
                     </div>
-                <div>
+                </div>
+                <div class="col-sm">
+                    <div id="chart6">
+                        <div id="{{ids[4]}}"></div>
+                    </div>
+                </div>
             </div>
         
         </div>
